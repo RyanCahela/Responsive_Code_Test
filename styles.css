@@ -27,6 +27,9 @@
     --max-width: 1500px;
     --min-width: 1200px;
 
+    /*Animation Value*/
+    --animation-duration: 0.3s
+
 }
 
 html,
@@ -55,10 +58,6 @@ html {
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(0, 0, 0, 0) 100%);
 }
 
-.header {
-
-}
-
 .header__button {
     background-color: var(--accent-color);
     border: none;
@@ -66,7 +65,9 @@ html {
     font-family: var(--primary-font);
     font-size: var(--xs-font-size);
     font-weight: var(--font-weight-medium);
+    outline: none;
     padding: 1rem;
+    transition: background-color var(--animation-duration);
     width: 100%;
 }
 
@@ -81,16 +82,18 @@ html {
     position: relative;
     top: 3px;
     transform: rotate(180deg);
-    transition: transform 0.3s;
+    transition: transform var(--animation-duration);
     width: var(--s-font-size);
 }
 
 .header__button:hover {
     cursor: pointer;
+    background-color: var(--accent-color-dark);
 }
 
 .header__button:hover:after {
     transform: rotate(180deg) translateX(-5px);
+    background-color: var(--accent-color-dark);
 }
 
 .main-heading {
@@ -125,6 +128,10 @@ html {
     font-size: var(--l-font-size);
     font-weight: var(--font-weight-light);
     margin-bottom: 2rem;
+    position: relative;
+    text-transform: uppercase;
+    transition: transform var(--animation-duration);
+    z-index: 2;
 }
 
 .treatments-list__item { 
@@ -134,41 +141,21 @@ html {
     height: 30rem;
     justify-content: flex-end;
     margin-bottom: 2rem;
+    position: relative;
     width: 100%;
 }
 
-
-/**********************
-Helper classes
-***********************/
-.side-padding--20px {
-    padding-left: 2rem;
-    padding-right: 2rem;
+.treatments-list__item:hover {
+    cursor: pointer;
 }
 
-.bg-image {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.treatments-list__item:hover .bg-image {
+    filter: brightness(80%);
 }
 
-.bg-face-image {
-    background-image: url('./img/face.png');
+.treatments-list__item:hover .treatments-list__heading {
+    transform: translateY(-20px);
 }
-
-.bg-breasts-image {
-    background-image: url('./img/breasts.png');
-}
-
-.bg-body-image {
-    background-image: url('./img/body.png');
-}
-
-.bg-medspa-image {
-    background-image: url('./img/medspa.png');
-}
-
-
 
 /*********************
 TABLET Media Query
@@ -191,7 +178,7 @@ TABLET Media Query
     .treatments-list__item {
         width: 48%;
     }
-  }
+}
 
 
 /*********************
@@ -222,6 +209,41 @@ DESKTOP Media Query
         padding-left: 0;
         padding-right: 0;
     }
+}
 
 
-  }
+/**********************
+Helper classes
+***********************/
+.side-padding--20px {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.bg-image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    position: absolute;
+    transition: filter var(--animation-duration);
+    width: 100%;
+    z-index: 1;
+}
+
+.bg-face-image {
+    background-image: url('./img/face.png');
+}
+
+.bg-breasts-image {
+    background-image: url('./img/breasts.png');
+}
+
+.bg-body-image {
+    background-image: url('./img/body.png');
+}
+
+.bg-medspa-image {
+    background-image: url('./img/medspa.png');
+}
+
