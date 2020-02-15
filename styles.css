@@ -3,10 +3,12 @@
     --secondary-font: 'Raleway', sans-serif;
 
     --xl-font-size: 4.4rem;
-    --l-font-size: 3.6rem;
-    --m-font-size: 2.4rem;
+    --l-font-size: 4.0rem;
+    --m-font-size: 2.2rem;
     --s-font-size: 1.8rem;
     --xs-font-size: 1.5rem;
+
+    --m-line-height: 3.6rem;
 
     --font-weight-light: 300;
     --font-weight-medium: 500;
@@ -54,6 +56,7 @@ html {
 
 .header__button {
     background-color: var(--accent-color);
+    border: none;
     color: var(--white);
     font-family: var(--primary-font);
     font-size: var(--xs-font-size);
@@ -77,25 +80,50 @@ html {
     font-size: var(--m-font-size);
     font-weight: var(--font-weight-light);
     margin-top: 3rem;
+    padding-bottom: 1rem;
     text-align: center;
 }
 
+
+.treatments-copy {
+    font-family: var(--primary-font);
+    font-size: var(--m-font-size);
+    font-weight: var(--font-weight-light);
+    line-height: var(--m-line-height);
+    margin-bottom: 5rem;
+}
+
 .treatments-list {
+    display: flex;
+    flex-direction: column;
     list-style: none;
 }
 
+.treatments-list__heading {
+    color: var(--white);
+    font-family: var(--secondary-font);
+    font-size: var(--l-font-size);
+    font-weight: var(--font-weight-light);
+    margin-bottom: 2rem;
+}
 
-
-.treatments-list__item {
+.treatments-list__item { 
+    align-items: center;
+    display: flex;
+    flex-direction: column;
     height: 30rem;
+    justify-content: flex-end;
+    margin-bottom: 2rem;
     width: 100%;
 }
+
 
 /**********************
 Helper classes
 ***********************/
-.padding--20px {
-    padding: 2rem;
+.side-padding--20px {
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 
 .bg-image {
