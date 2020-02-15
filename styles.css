@@ -1,4 +1,5 @@
 :root {
+     /*Font Values*/
     --primary-font: 'Montserrat', sans-serif;
     --secondary-font: 'Raleway', sans-serif;
 
@@ -21,6 +22,10 @@
     --light-grey: #D8D8D8;
     --grey: #707073;
     --text-color: #2E3133;
+
+    /*Layout Values*/
+    --max-width: 1500px;
+    --min-width: 1200px;
 
 }
 
@@ -62,6 +67,7 @@ html {
     font-size: var(--xs-font-size);
     font-weight: var(--font-weight-medium);
     padding: 1rem;
+    width: 100%;
 }
 
 .header__button:after {
@@ -71,8 +77,20 @@ html {
     background-repeat: no-repeat;
     display: inline-block;
     height: var(--s-font-size);
+    margin-left: 5px;
+    position: relative;
+    top: 3px;
     transform: rotate(180deg);
+    transition: transform 0.3s;
     width: var(--s-font-size);
+}
+
+.header__button:hover {
+    cursor: pointer;
+}
+
+.header__button:hover:after {
+    transform: rotate(180deg) translateX(-5px);
 }
 
 .main-heading {
@@ -97,6 +115,8 @@ html {
     display: flex;
     flex-direction: column;
     list-style: none;
+    margin: 0 auto;
+    max-width: var(--max-width);
 }
 
 .treatments-list__heading {
@@ -127,7 +147,9 @@ Helper classes
 }
 
 .bg-image {
-    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .bg-face-image {
@@ -145,3 +167,61 @@ Helper classes
 .bg-medspa-image {
     background-image: url('./img/medspa.png');
 }
+
+
+
+/*********************
+TABLET Media Query
+**********************/
+@media screen and (min-width: 600px) {
+
+    .main-heading {
+        font-size: var(--l-font-size);
+        margin-bottom: 2rem;
+        margin-top: 6rem;
+    }
+
+    .treatments-list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .treatments-list__item {
+        width: 48%;
+    }
+  }
+
+
+/*********************
+DESKTOP Media Query
+**********************/
+@media screen and (min-width: 1024px) {
+
+    .treatments-copy {
+        text-align: center;
+        font-size: var(--s-font-size);
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .treatments-list {
+        display: flex;
+        flex-basis: 250px;
+        flex-direction: row;
+        flex-shrink: 0;
+        justify-content: space-evenly;
+    }
+
+    .treatments-list__item {
+        width: 20%;
+    }
+
+    .side-padding--20px {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+
+  }
