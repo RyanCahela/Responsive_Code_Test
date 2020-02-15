@@ -152,7 +152,7 @@ html {
 }
 
 .treatments-list__item:hover .bg-image {
-    filter: brightness(80%);
+    filter: grayscale(100%);
 }
 
 .treatments-list__item:hover .treatments-list__heading {
