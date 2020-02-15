@@ -1,0 +1,119 @@
+:root {
+    --primary-font: 'Montserrat', sans-serif;
+    --secondary-font: 'Raleway', sans-serif;
+
+    --xl-font-size: 4.4rem;
+    --l-font-size: 3.6rem;
+    --m-font-size: 2.4rem;
+    --s-font-size: 1.8rem;
+    --xs-font-size: 1.5rem;
+
+    --font-weight-light: 300;
+    --font-weight-medium: 500;
+
+    /*Color Values*/
+    --white: #FFFFFF;
+    --black: #000000;
+    --accent-color: hsl(358, 54%, 44%);
+    --accent-color-dark: hsl(358, 60%, 40%);
+    --light-grey: #D8D8D8;
+    --grey: #707073;
+    --text-color: #2E3133;
+
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* enables REMS to be used like pixels ex: 1.6 rem = 16px */
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+    width: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(0, 0, 0, 0) 100%);
+}
+
+.header {
+
+}
+
+.header__button {
+    background-color: var(--accent-color);
+    color: var(--white);
+    font-family: var(--primary-font);
+    font-size: var(--xs-font-size);
+    font-weight: var(--font-weight-medium);
+    padding: 1rem;
+}
+
+.header__button:after {
+    content: "";
+    background-image: url("./img/icons/white-arrow.svg");
+    background-size: var(--s-font-size) var(--s-font-size);
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: var(--s-font-size);
+    transform: rotate(180deg);
+    width: var(--s-font-size);
+}
+
+.main-heading {
+    font-family: var(--primary-font);
+    font-size: var(--m-font-size);
+    font-weight: var(--font-weight-light);
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.treatments-list {
+    list-style: none;
+}
+
+
+
+.treatments-list__item {
+    height: 30rem;
+    width: 100%;
+}
+
+/**********************
+Helper classes
+***********************/
+.padding--20px {
+    padding: 2rem;
+}
+
+.bg-image {
+    background-size: 100%;
+}
+
+.bg-face-image {
+    background-image: url('./img/face.png');
+}
+
+.bg-breasts-image {
+    background-image: url('./img/breasts.png');
+}
+
+.bg-body-image {
+    background-image: url('./img/body.png');
+}
+
+.bg-medspa-image {
+    background-image: url('./img/medspa.png');
+}
