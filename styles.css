@@ -28,7 +28,8 @@
     --min-width: 1200px;
 
     /*Animation Value*/
-    --animation-duration: 0.3s
+    --animation-duration: 0.3s;
+    --animation-duration-long: 5s;
 
 }
 
@@ -143,6 +144,7 @@ html {
     height: 30rem;
     justify-content: flex-end;
     margin-bottom: 2rem;
+    overflow: hidden;
     position: relative;
     width: 100%;
 }
@@ -153,10 +155,29 @@ html {
 
 .treatments-list__item:hover .bg-image {
     filter: grayscale(100%);
+    transform: scale(1.2);
 }
 
 .treatments-list__item:hover .treatments-list__heading {
     transform: translateY(-20px);
+}
+
+/**********************
+Helper classes
+***********************/
+.side-padding--20px {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.bg-image {
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    transition: filter var(--animation-duration),
+                transform var(--animation-duration-long);
+    width: 100%;
+    z-index: 1;
 }
 
 /*********************
@@ -212,40 +233,3 @@ DESKTOP Media Query
         padding-right: 0;
     }
 }
-
-
-/**********************
-Helper classes
-***********************/
-.side-padding--20px {
-    padding-left: 2rem;
-    padding-right: 2rem;
-}
-
-.bg-image {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100%;
-    position: absolute;
-    transition: filter var(--animation-duration);
-    width: 100%;
-    z-index: 1;
-}
-
-.bg-face-image {
-    background-image: url('./img/face.png');
-}
-
-.bg-breasts-image {
-    background-image: url('./img/breasts.png');
-}
-
-.bg-body-image {
-    background-image: url('./img/body.png');
-}
-
-.bg-medspa-image {
-    background-image: url('./img/medspa.png');
-}
-
