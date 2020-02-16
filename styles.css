@@ -157,7 +157,7 @@ html {
 
 .treatments-list__item:hover .bg-image {
     filter: grayscale(100%);
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 .treatments-list__item:hover .treatments-list__heading {
