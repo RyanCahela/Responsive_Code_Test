@@ -17,6 +17,7 @@
     /*Color Values*/
     --white: #FFFFFF;
     --black: #000000;
+    --black-with-alpha: rgba(0, 0, 0, 0.25);
     --accent-color: hsl(358, 54%, 44%);
     --accent-color-dark: hsl(358, 60%, 40%);
     --light-grey: #D8D8D8;
@@ -62,6 +63,7 @@ html {
 .header__button {
     background-color: var(--accent-color);
     border: none;
+    box-shadow: 0px 0px 50px var(--black-with-alpha);
     color: var(--white);
     font-family: var(--primary-font);
     font-size: var(--xs-font-size);
